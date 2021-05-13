@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
+import NoMatch from "./pages/NoMatch";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is going to be a Google Books API search/save app.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename="/">
+      <Switch>
+        <Route exact path="/saved" component={Saved} />
+        <Route exact path={["/", "/search"]} component={Search} />
+        <Route exact path="*" component={NoMatch} />
+      </Switch>
+    </Router>
   );
 }
 
