@@ -3,7 +3,7 @@ import React from "react";
 // Defining styles for card component
 const styles = {
     cardStyle: {
-        width: "60%",
+        width: "50%",
         margin: "auto",
         marginTop: "15px",
         border: "2px solid black",
@@ -12,16 +12,21 @@ const styles = {
     },
     buttonStyle: {
         margin: "5px"
+    },
+    imageStyle: {
+        height: "50%",
+        width: "35%",
+        marginBottom: "10px"
     }
 }
 
 function SearchCard(props) {
     return (
         <div className="card" style={styles.cardStyle} id={props.id}>
-            <img src="" className="card-img-top" alt="book"></img>
                 <div className="card-body">
-                    <h5 className="card-title">Book title</h5>
-                    <p className="card-text">Book Synopsis</p>
+                    <img style={styles.imageStyle} src={props.image} className="card-img-top" alt="book"></img>
+                    <h5 className="card-title">{props.title}</h5>
+                    <p className="card-text">By: {props.author}</p>
                     <button className="btn btn-outline-dark">Save</button>
                 </div>
         </div>

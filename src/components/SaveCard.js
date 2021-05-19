@@ -18,10 +18,10 @@ const styles = {
 function SaveCard(props) {
     return (
         <div className="card" style={styles.cardStyle} id={props.id}>
-            <img src="" className="card-img-top" alt="book"></img>
+            <img src={props.image} className="card-img-top" alt="book"></img>
                 <div className="card-body">
-                    <h5 className="card-title">Book title</h5>
-                    <p className="card-text">Book Synopsis</p>
+                    <h5 className="card-title">{props.title}</h5>
+                    <p className="card-text">By: {props.author}</p>
                     <button style={styles.buttonStyle} className="btn btn-outline-dark">Read More</button>
                     <button className="btn btn-outline-dark">Delete</button>
                 </div>
