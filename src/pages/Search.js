@@ -1,6 +1,7 @@
 import React from "react";
 import Jumbotron from "../components/Jumbotron";
 import SearchInput from "../components/SearchInput";
+import SearchCard from "../components/SearchCard";
 import { Col, Row, Container } from "../components/Grid";
 
 function Search() {
@@ -20,6 +21,9 @@ function Search() {
             </Row>
             <Row>
                 <h2 style={{ textAlign: "center ", textDecoration: "underline "}}>Search Results: </h2>
+            </Row>
+            <Row>
+                <SearchCard />
             </Row>
         </Container>
     )
