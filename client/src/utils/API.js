@@ -28,4 +28,4 @@ export default {
     saveBook: function (bookData) {
         return axios.post("/api/books", bookData);
     }
-};
+}; 

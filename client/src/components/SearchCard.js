@@ -29,7 +29,7 @@ function SearchCard(props) {
                     <p className="card-text">By: {props.author}</p>
                     <button onClick={props.bookSave} className="btn btn-outline-dark">Save</button>
                 </div>
-        </div>
+        </div> 
     )
 }
 
