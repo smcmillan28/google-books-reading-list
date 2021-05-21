@@ -11,6 +11,8 @@ function Search() {
     const [image, setImage] = useState("https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png");
     const [title, setTitle] = useState("Book Title");
     const [author, setAuthor] = useState("Author");
+    const [link, setLink] = useState("");
+    const [description, setDesc] = useState("");
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -33,7 +35,19 @@ function Search() {
                 setImage(info[randNum].volumeInfo.imageLinks.thumbnail);
                 setTitle(info[randNum].volumeInfo.title);
                 setAuthor(info[randNum].volumeInfo.authors);
+                setDesc(info[randNum].volumeInfo.description);
+                setLink(info[randNum].volumeInfo.infoLink);
             });
+    }
+
+    const saveThisBook = () => {
+        API.saveBook({
+            authors: author,
+            title: title,
+            description: description,
+            image: image, 
+            link: link
+        });
     }
 
     return (
@@ -62,6 +76,7 @@ function Search() {
                     image={image}
                     title={title}
                     author={author}
+                    bookSave={saveThisBook}
                 />
             </Row>
         </Container>

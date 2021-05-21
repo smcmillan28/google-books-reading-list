@@ -27,7 +27,7 @@ function SearchCard(props) {
                     <img style={styles.imageStyle} src={props.image} className="card-img-top" alt="book"></img>
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">By: {props.author}</p>
-                    <button className="btn btn-outline-dark">Save</button>
+                    <button onClick={props.bookSave} className="btn btn-outline-dark">Save</button>
                 </div>
         </div>
     )
