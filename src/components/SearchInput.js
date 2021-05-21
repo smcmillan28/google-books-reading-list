@@ -28,7 +28,7 @@ function SearchInput(props) {
                                 style={styles.inputStyles}
                                 type="text"
                                 className="form-control"
-                                placeholder="Enter Title or Author"
+                                placeholder="Enter Author Name"
                                 ref={props.searchTerm}
                             />
                         </div>

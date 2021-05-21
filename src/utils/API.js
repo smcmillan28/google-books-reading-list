@@ -5,7 +5,7 @@ import axios from "axios";
 export default {
     searchBooks: function (query) {
         return axios.get(
-            "https://www.googleapis.com/books/v1/volumes?q=" + 
+            "https://www.googleapis.com/books/v1/volumes?q=inauthor:" + 
             query + 
             "&key=" +
             process.env.REACT_APP_API_KEY

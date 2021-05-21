@@ -8,9 +8,9 @@ import { Col, Row, Container } from "../components/Grid";
 function Search() {
     const inputRef = useRef();
 
-    const [image, setImage] = useState("");
-    const [title, setTitle] = useState("");
-    const [author, setAuthor] = useState("");
+    const [image, setImage] = useState("https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png");
+    const [title, setTitle] = useState("Book Title");
+    const [author, setAuthor] = useState("Author");
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -27,11 +27,12 @@ function Search() {
                 if (res.data.status === "error") {
                     throw new Error(res.data.message);
                 }
+                const randNum = Math.floor(Math.random() * 10);
                 const info = res.data.items;
                 console.log(info);
-                setImage(info[0].volumeInfo.imageLinks.thumbnail);
-                setTitle(info[0].volumeInfo.title);
-                setAuthor(info[0].volumeInfo.authors);
+                setImage(info[randNum].volumeInfo.imageLinks.thumbnail);
+                setTitle(info[randNum].volumeInfo.title);
+                setAuthor(info[randNum].volumeInfo.authors);
             });
     }
 
@@ -41,7 +42,7 @@ function Search() {
                 <Col size="md-12">
                     <Jumbotron>
                         <div>
-                            <h5>Search for your favorite books below, then hit save to add to your library!</h5>
+                            <h5>Search by author below.  A random book will pop up, hit save to add to your library!</h5>
                         </div>
                     </Jumbotron>
                 </Col>
